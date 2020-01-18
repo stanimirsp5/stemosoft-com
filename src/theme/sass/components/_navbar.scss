@@ -24,7 +24,7 @@
 .navbar__logo{
 	font-size: 1.325rem;
 	transition: 0;
-	color: #fff;
+	color: $text;
 	text-decoration: none;
 }
 
@@ -50,7 +50,9 @@
 	}
 
 	a{
-		color: #fff;
+		color: $text;
+		// text-transform: uppercase;
+		font-weight: bold;
 		@include desktop{
 			opacity: 0.75;
 
