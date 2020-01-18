@@ -7,6 +7,9 @@
 }
 
 .hero__content__inner{
+	@include desktop{
+		max-width: 50%;
+	}
 	h6{
 		color: #cecece;
 		margin-top: 2.2em;
