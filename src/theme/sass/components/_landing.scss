@@ -3,7 +3,7 @@
 }
 
 .landing__section:nth-child(odd){
-	background-color: $background-alt;
+	background-color: $secondary;//$background-alt;
 	border-top: 1px solid $line;
 	border-bottom: 1px solid $line;
 }
