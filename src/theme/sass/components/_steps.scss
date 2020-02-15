@@ -1,44 +1,69 @@
 .steps{
-	text-align: center;
-	padding: 16pt 0;
+	text-align: left;
+
+	@include desktop {
+		text-align: center;
+	}
 }
 
 .steps__inner{
-	@include desktop{
+	@include desktop {
+		align-content: stretch;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 }
 
 .step{
-	padding: 16pt 0;
-	text-align: center;
+	align-items: flex-start;
+	align-content: space-between;
+	display: flex;
+	padding: 16px 0;
+	text-align: left;
+	justify-content: space-between;
 	width: 100%;
-	border-top: 1px solid $line;
-	overflow: auto; 
 
-	&:first-child{
-		border-top: none;
+	@include desktop {
+		justify-content: flex-start;
+		flex-direction: column;
+		text-align: center;
 	}
+}
 
-	@include desktop{
-		border-top: none;
-		width: auto;
+.step__detail {
+	padding: 16px;
+	@include desktop {
+		display: flex;	
+		flex-direction: column;
+	}
+}
+
+.step__download {
+	align-items: flex-start;
+	align-content: space-between;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 64px;
+	width: 100%;
+	* {
+		margin-right: 1em;
 	}
 }
 
 .step__media{
-	margin: 16pt 0;
+	margin: 16px 16px 0 0;
 
 	@include desktop{
-		margin: 32pt 0;
+		// margin: 32pt 0;
+		text-align: center;
+		align-self: center;
 	}
 }
 
 .step__image{
-	max-height: 100px;
-	max-width: 222px;
-	margin-top: 8pt;
+	max-height: 90px;
+	max-width: 90px;
+	margin-top: 16pt;
 	@include noDragging;
 
 	@include tablet{
@@ -46,9 +71,37 @@
 	}
 }
 
+.step__title{
+	font-weight: bold;
+	font-size: 24px;
+	margin: 0;
+	text-transform: lowercase;
+
+	@include desktop {
+		align-self: flex-start;
+	}
+}
+
+.step__subtitle{
+	color: $text;
+	font-size: 21px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
 .step__text{
-	max-width: 36ch;
+	// max-width: 36ch;
 	text-align: left;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.step__link{
+	color: $primary;
+	text-decoration: underline;
+	
+	&:hover {
+		color: darken($primary,20%);
+		font-weight: bold;
+	}
 }

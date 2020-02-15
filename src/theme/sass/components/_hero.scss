@@ -7,7 +7,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: $hero-color;
-	margin-bottom: 5em;
+	// margin-bottom: 5em;
 
 	&__inner{
 		position: relative;
@@ -81,15 +81,19 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	min-height: calc( 100vh - 220px );
-	padding: calc( #{$navbar-height + 72pt}) 0; // Padding added to avoid overlapping with fixed navigation bars
+	min-height: 100vh;
+	padding: 0 0 0 0; // Padding added to avoid overlapping with fixed navigation bars
 	overflow: auto;
+	text-align: left;
+
+	@include tablet {
+		min-height: 40vh;
+	}
 
 	@include desktop{
 		flex-wrap: nowrap;
 		align-items: flex-start;
 		justify-content: space-evenly;
-		text-align: left;
 		padding: calc( #{$navbar-height}) 0;
 	}
 }
@@ -97,7 +101,16 @@
 /*--- CONTENT STYLING ---*/
 .hero__title{
 	color: inherit;
-	margin-bottom: 1.25em;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.hero__subtitle{
+	color: $primary;
+	font-size: 21px;
+	font-weight: 500;
+	margin-bottom: 16px;
 }
 
 .hero__text{
@@ -105,6 +118,7 @@
 	line-height: 1.7;
 	text-align: left;
 	font-size: 1.1em;
+	margin: 0;
 }
 
 .hero__image {
@@ -112,19 +126,23 @@
 }
 
 .hero .button{
-	margin: 12pt 8pt;
+	margin: 64px 0 32px 0;
 }
 
-.hero__button{
-	color: $hero-color;
-	border-color: $hero-color;
+.hero__button {
+	background-color: $primary;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px;
+	width: 100%;
 
-	@include desktop{
-		&:hover{
-			color: darken($hero-color,11%);
-			border-color: darken($hero-color,11%);
-		}
+	&:hover{
+		background-color: darken($primary,15%);
 	}
+	// @include desktop{
+
+	// }
 }
 
 // Sub-hero
