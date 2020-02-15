@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 	<meta class="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -8,104 +9,141 @@
 	<% include ./partials/metadata %>
 	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
 </head>
+
 <body>
-	<% include ./partials/nav %>
+	<!-- <% include ./partials/nav %> -->
 
 	<!-- MAIN PAGE -->
 	<div class="hero">
-		<div class="hero__overlay--curved hero__overlay--background"></div>
+		<div class="hero__overlay hero__overlay--background"></div>
 		<div class="hero__mask"></div>
 		<div class="hero__inner">
 			<div class="container">
 				<div class="hero__content">
 					<div class="hero__content__inner" id='navConverter'>
-						<h1 class="hero__title">We create apps</h1>
-						<p class="hero__text">Stemosoft is an MIT licensed template bundled with a minimal style guide to build websites faster. It is extemely lightweight, customizable and works perfectly on modern browsers.</p>
-						<a href="/docs" class="button hero__button">Learn more</a>
-					</div>
-					<!-- Image: -->
-					<div class="hero__image">
-						<img src="./images/undraw_Mobile_application_mr4r.svg"`>
+						<h1 class="hero__title">stemosoft</h1>
+						<h2 class="hero__subtitle">We create apps</h2>
+						<p class="hero__text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat doloribus quibusdam
+							libero earum, possimus at, voluptate, ipsa expedita laboriosam.
+						</p>
+						<a href="#appsList" class="button hero__button">SEE APPS</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="hero__sub">
+	<!-- <div class="hero__sub">
 		<span id="scrollToNext" class="scroll">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class='hero__sub__down' fill="currentColor" width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z"/></svg>
 		</span>
-	</div>
+	</div> -->
 
 	<!-- APPS LIST -->
-	<div class="steps landing__section">
+	<div id="appsList" class="steps landing__section">
 		<div class="container">
-			<h2>Stemo Apps</h2>
-			<p>Here's our apps</p>
+			<h2 class="step__title">stemosoft apps</h2>
 		</div>
 		<div class="container">
 			<div class="steps__inner">
+
 				<div class="step">
 					<div class="step__media">
-						<img src="./images/undraw_designer.svg" class="step__image">
+						<img src="./images/live_text_hi_res_icon.png" class="step__image">
 					</div>
-					<h4>Live text</h4>
-					<p class="step__text">A landing page for your open source projects. Present your solution, easily create docs.</p>
+					<div class="step__detail">
+						<h4 class="step__subtitle">Live Text</h4>
+						<p class="step__text">
+							Show your <strong> message </strong> at a <strong> concert </strong>, <strong> EDM party
+							</strong> or any other fun
+							place you can imagine with our new and intuitive
+							<strong> display application</strong>!
+						</p>
+						<a href="greenTicketPrivacy.html" class="step__link">
+							Improve your party experience!
+						</a>					
+						<!-- <div class="step__download">
+							<a href="https://apps.apple.com/tt/app/live-text-text-flasher/id1493849391">
+								<img src="./images/app_store_badge.png" alt="Download app on the Apple App store">
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=live.text&hl=en">
+								<img src="./images/play_store_badge.png" alt="Download app on the Google Play store">
+							</a>
+						</div> -->
+					</div>
 				</div>
+				
+
 				<div class="step">
 					<div class="step__media">
-						<img src="./images/undraw_responsive.svg" class="step__image">
+						<img src="./images/green_ticket_hi_res_icon.png" class="step__image">
 					</div>
-					<h4>Air Sofia</h4>
-					<p class="step__text">A website for your own freebies. Share your artwork and let the world use it.</p>
+					<div class="step__detail">
+						<h4 class="step__subtitle">Green Ticket</h4>
+						<p class="step__text">
+							The Green Ticket app notifies you if a green ticket for Sofia's public transportation 
+							system is available today. Get an early warning and don't leave home unprepared!
+						</p>
+
+						<a href="greenTicketPrivacy.html" class="step__link">
+							See if a Green Ticket is available today!
+						</a>
+					</div>
 				</div>
+				<!-- <div class="step__download">
+					<a href="https://apps.apple.com/tt/app/live-text-text-flasher/id1493849391">
+						<img src="./images/app_store_badge.png" alt="Download app on the Apple App store">
+					</a>
+					<a href="https://play.google.com/store/apps/details?id=green.ticket.app&hl=en">
+						<img src="./images/play_store_badge.png" alt="Download app on the Google Play store">
+					</a>
+				</div> -->
 				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_creation.svg" class="step__image">
+					<div class="step__detail">
+						<h4 class="step__subtitle">Air Sofia</h4>
+						<p class="step__text">
+							Air Sofia will notify you about the air quality near you. Coming soon on the
+							<strong> Google Play Store </strong> and the <strong> App Store </strong>
+						</p>
 					</div>
-					<h4>Green ticket</h4>
-					<p class="step__text">A great starting point for your web application. Focus on your idea and execution.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- TEAM LIST -->
-	<div class="steps landing__section">
+	<div id="ourTeam" class="steps landing__section">
 		<div class="container">
-			<h2>Stemo Team</h2>
-			<p>Who we are</p>
+			<h2 class="step__title">stemosoft team</h2>
 		</div>
 		<div class="container">
 			<div class="steps__inner">
 				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_designer.svg" class="step__image">
+					<div class="step__detail">
+						<h4 class="step__subtitle">Petrov</h4>
+						<p class="step__text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sapiente consequuntur, maxime nihil nemo quasi officia dolor ea tempora et obcaecati velit quo adipisci earum temporibus excepturi voluptatibus quibusdam perferendis.
+						</p>
 					</div>
-					<h4>Belioff</h4>
-					<p class="step__text">A landing page for your open source projects. Present your solution, easily create docs.</p>
 				</div>
+
 				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_responsive.svg" class="step__image">
+					<div class="step__detail">
+						<h4 class="step__subtitle">Belyov</h4>
+						<p class="step__text">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati tenetur qui repellat vel maxime, aliquid nulla quo exercitationem saepe. Quibusdam, aliquid! Magnam tempora officia dolorem et, omnis quibusdam qui repudiandae.
+						</p>
 					</div>
-					<h4>Petrov</h4>
-					<p class="step__text">A website for your own freebies. Share your artwork and let the world use it.</p>
 				</div>
-				<!-- <div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_creation.svg" class="step__image">
-					</div>
-					<h4>Green ticket</h4>
-					<p class="step__text">A great starting point for your web application. Focus on your idea and execution.</p>
-				</div> -->
+
 			</div>
 		</div>
 	</div>
 
 	<!-- CONTACTS -->
-<% include ./partials/footer %>
-<script src='<%= asset("js/app.min.js") %>'></script>
-<% include ./partials/analytics %>
+	<% include ./partials/footer %>
+	<script src='<%= asset("js/app.min.js") %>'></script>
+	<% include ./partials/analytics %>
 </body>
+
 </html>
