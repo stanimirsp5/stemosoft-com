@@ -3,55 +3,143 @@
 <head>
 	<meta class="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Stemosoft | Green ticket privacy policy</title>
+	<title>
+		Stemosoft | Green ticket</title>
 	<%_ currentPage = "/docs" _%>
 	<% include ./partials/metadata %>
+	<link rel="icon" src="./images/greenTicket/icon-20.png">
 	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
 </head>
 <body>
-	<% include ./partials/nav %>
-	<div class="page__header">
-		<div class="hero__overlay hero__overlay--gradient"></div>
-		<div class="hero__mask"></div>
-		<div class="page__header__inner">
+	<!-- <% include ./partials/nav %> -->
+	<div class="page__header_o">
 			<div class="container">
-				<div class="page__header__content">
-					<div class="page__header__content__inner" id='navConverter'>
-						<h1 class="page__header__title">Green ticket privacy policy</h1>
-						<p class="page__header__text">We designed this theme to be plug and play but a minimal style system is included to build on. Here you can find everything about it, how to use and customize it.</p>
+				<div class="page__header__content_o">
+					<div  class="page__header__content__inner" id='navConverter'>
+						
+						<h1 class="page__header__title_o">
+						<img id="small-image" src="./images/greenTicket/icon-29@3x.png" class="expanded__image">
+						Green ticket</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="page">
+	<div style="padding:0" class="page">
 		<div class="container">
 			<div class="page__inner">
-				<div class="page__menu">
-					<% page = "overview" %>
-					<% include ./partials/docs_menu %>
+				<div id="border_divider"></div>
+				<div class="page__menu_o">
+					<ul class="vMenu">
+						<li><a href="#what-is-green-ticket" <% if(page === "liveTextPrivacy"){ %>class="vMenu--active"<%}%> >What is green ticket</a></li>
+						<li><a href="#app-info" <% if(page === "liveTextPrivacy"){ %>class="vMenu--active"<%}%> >What is Green ticket Sofia™</a></li>
+						<li><a href="#market" <% if(page === "airSofiaPrivacy"){ %>class="vMenu--active"<%}%> >Details</a></li>
+						<li><a href="#privacy-policy" <% if(page === "greenTicketPrivacy"){ %>class="vMenu--active"<%}%> >Privacy policy</a></li>
+					</ul>
 				</div>
-				<div class="page__main">
+				<div class="page__main_o">
 					<div class="container">
-						<div class="text-container text-container--center">
-							<p class="docs__text__title">Evie is a lightweight theme that includes pages, some components and styles most elements in a way that fit together to create appealing websites.</p>
-							<h3>Versions</h3>
-							<p>There are two versions: production which includes both minified and unminified CSS and JS files along with the html template. The development version contains the SASS files and the full source code for the theme and the documents.</p>
-							<h3>Get started</h3>
-							<p>
-								<span class="stress"><u>Production version <small>(theme)</small>:</u></span> Just download the production file, unzip it and click on it to preview the content. You can then change the texts, select new illustrations (or images!) and upload to any host you like as a normal static site.
-							</p>
-							<a href="/downloads/evie_theme.zip" class="button button__accent" onclick="trackOutboundLink('/downloads/evie_theme.zip','Download','Theme')">Download Theme</a> 
-							<p>
-								<span class="stress"><u>Development version <small>(source)</small>:</u></span> If you are familiar with SASS and you want the source files, download the development version. There you will find the SASS files <small>("src/theme/sass")</small>, the documentation website and a pretty specific Gulp/Express.js setup which you'll probably want to replace with your own.
-							</p>
-							<a href="/downloads/evie_source.zip" class="button" onclick="trackOutboundLink('/downloads/evie_source.zip','Download','Source')">Download Source</a>
-							<h3>Comparison</h3>
-							<p>There are many CSS frameworks out there (Bootstrap, Foundation,etc), so there is probably not a need for one more. That's why Evie is simply a theme that happens to include a small style guide. You can use Evie right away without having to learn anything or you can use it as a starting point and build on it.</p>
-							<div class="docs__options">
-								<span></span>
-								<a href="/pages" class="docs__next">Next: Pages &#187;</a>
+						<div class="text_container_o text_container_o--center">
+							<div class="step__media">
 							</div>
+							<h1 class="what-is-green-ticket" id="app-info">What is green ticket?</h1>
+							<div >
+								Get notified when there is a green ticket in Sofia!
+								<br>
+								The Green Ticket app notifies you if a green ticket for Sofia's public transportation system is available today. Get an early warning and don't leave home unprepared! You can also use the app to do a simple check of the air quality in your area in Sofia city, so you can make sure that is safe for your health. The app will also notify you if the air pollution levels are close to hazardous!
+							</div>
+							<h1 class="description-header" id="app-info">What is Green ticket Sofia™?</h1>
+							<div >
+								Get notified when there is a green ticket in Sofia!
+								<br>
+								The Green Ticket app notifies you if a green ticket for Sofia's public transportation system is available today. Get an early warning and don't leave home unprepared! You can also use the app to do a simple check of the air quality in your area in Sofia city, so you can make sure that is safe for your health. The app will also notify you if the air pollution levels are close to hazardous!
+							</div>
+							<h1 class="description-header" id="market">Details</h1>
+							<div >
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/greenTicket/screen1.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Be notified when there is a green ticket</h2>
+												<p class="expanded__text">Every time when there is a green ticket you will be notified first !</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/greenTicket/screen2.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Check air polution near you</h2>
+												<p class="expanded__text">Green ticket app allows you to check the air quality index and see if there is air polution in the location you choosed</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/greenTicket/screen3.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">See your favourite station every time </h2>
+												<p class="expanded__text">Make the most common used by you station as your favourite so you can see it every time when you open the Green ticket app</p>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
+						<h1 class="description-header" id="privacy-policy">Privacy policy</h1>
+							<div id="privacy-policy-content">
+								Stemosoft build the "Green Ticket Sofia" app as Free app. 
+
+								This SERVICE is provided by at no cost and is intended for use as is.
+								This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+								If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+								The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at "Green Ticket Sofia" unless otherwise defined in this Privacy Policy.
+								
+								Information Collection and Use
+
+								For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.
+								The app does use third party services that may collect information used to identify you.
+								Link to privacy policy of third party service providers used by the app:
+								Google Play Services
+								Log Data
+								I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+								
+								Cookies
+								Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
+								This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+								
+								Service Providers
+								I may employ third-party companies and individuals due to the following reasons:
+								To facilitate our Service;
+								To provide the Service on our behalf;
+								To perform Service-related services; or
+								To assist us in analyzing how our Service is used.
+								I want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+								
+								Security
+								I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+								
+								Links to Other Sites
+								This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+								
+								Children’s Privacy
+								These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.
+								
+								Changes to This Privacy Policy
+								I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.
+								
+								Contact Us
+								If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at stemosoft@gmail.com.
 						</div>
 					</div>
 				</div>
