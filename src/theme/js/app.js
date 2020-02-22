@@ -124,9 +124,21 @@ document.addEventListener('DOMContentLoaded',function(){
 		// SCROLL TO NEXT ELEMENT ON LANDING
 		if (document.body.contains(document.getElementById('scrollToNext'))){
 			var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		
 			// if the current body position is less than 20 pixels away from the top, hide the icon
 			if (lastScrollTop > 20){ addNewClass(document.getElementById('scrollToNext'),'invisible');} else {removeClass(document.getElementById('scrollToNext'),'invisible');}
 		}
+		var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		let descriptionHeaders = document.querySelectorAll('.description-header');
+		let menuItems = document.querySelectorAll('.nav-menu-item');
+		descriptionHeaders.forEach((el,i) => {
+			if(lastScrollTop > getOffset(el).top){
+				addNewClass(menuItems[i],'invisible');
+			}
+			else if(lastScrollTop < getOffset(el).top){
+				addNewClass(menuItems[i],'visible');
+			}
+		});
 	});
 
 	// Responsive mobile menu
@@ -148,4 +160,5 @@ document.addEventListener('DOMContentLoaded',function(){
 		 addNewClass(document.querySelector('.navbar__menu'),'navbar__menu--noMob');
 		 addNewClass(document.querySelector('.navbar__menu-mob'), 'navbar__menu-mob--noMob');
 	};	
+
 });

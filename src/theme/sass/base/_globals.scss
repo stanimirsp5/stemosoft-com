@@ -11,6 +11,10 @@ html{
 	opacity: 0;
 	transition: 0.7s;
 }
+.visible{
+	opacity: 1;
+	transition: 0.7s;
+}
 
 .fakefield{
 	display: none;
