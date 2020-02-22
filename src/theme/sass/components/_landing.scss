@@ -2,6 +2,13 @@
 	padding: 24pt 0;
 }
 
+.landing__section--offsettop {
+	margin: -10vh 0 0 0;
+	padding: 0;
+	position: relative;
+	z-index: 100;
+}
+
 .landing__section:nth-child(odd){
 	background-color: $secondary;//$background-alt;
 	border-top: 1px solid $line;
