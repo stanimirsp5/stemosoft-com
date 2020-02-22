@@ -14,6 +14,12 @@
 	}
 }
 
+.steps__inner--background {
+	background-color: #fffffe;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
 .step{
 	align-items: flex-start;
 	align-content: space-between;
@@ -26,7 +32,7 @@
 	@include desktop {
 		justify-content: flex-start;
 		flex-direction: column;
-		text-align: center;
+		text-align: left;
 	}
 }
 
@@ -35,6 +41,7 @@
 	@include desktop {
 		display: flex;	
 		flex-direction: column;
+		padding-bottom: 0;
 	}
 }
 
@@ -51,12 +58,12 @@
 }
 
 .step__media{
-	margin: 16px 16px 0 0;
+	margin: 16px 16px 0 16px;
 
 	@include desktop{
 		// margin: 32pt 0;
 		text-align: center;
-		align-self: center;
+		// align-self: center;
 	}
 }
 
@@ -73,9 +80,11 @@
 
 .step__title{
 	font-weight: bold;
-	font-size: 24px;
-	margin: 0;
-	text-transform: lowercase;
+	font-size: 26px;
+	margin: 0 0 0 16px;
+	color: $text-dark;
+	text-align: left;
+	// text-transform: lowercase;
 
 	@include desktop {
 		align-self: flex-start;

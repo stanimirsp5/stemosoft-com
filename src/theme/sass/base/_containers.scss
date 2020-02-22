@@ -5,6 +5,16 @@
 	position: relative;
 }
 
+.container--left {
+	@include tablet {
+		margin: 0 0;
+	}
+
+	@include desktop {
+		margin: 0 0;
+	}
+}
+
 .row{
 	display: block;
 	width: 100%;

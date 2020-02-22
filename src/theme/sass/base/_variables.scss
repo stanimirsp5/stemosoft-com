@@ -13,7 +13,7 @@ $success: $accent;
 $error: tomato;
 
 // Typography
-$font: 'Asap', sans-serif;
+$font: 'Asap', sans-serif;  
 $font-size: 15px;
 $line-height: 1.7;
 $light: 300;
@@ -40,8 +40,8 @@ $navbar-height: 80px; // Height for navigation globally
 $navbar-height-extended: 70px; // Extended height for navigation => Used on landing
 
 // Hero
-$hero-color: $text;
-$hero-background-color: #fffffe;
+$hero-color: $text-dark;
+$hero-background-color: #f8f8f9;
 $hero-shadow: 0 4px 11px rgba(124,146,169,0.5);
 $hero-color-opacity: 0.96;
 $hero-mask-opacity: 0.66;
