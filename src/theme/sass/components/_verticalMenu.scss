@@ -67,6 +67,15 @@
 		}
 	}
 }
+.highlightHeader{
+		color: $primary;
+
+		display: block;
+		content: '';
+		border-bottom: 1px solid $primary;  
+		display: inline-block !important;
+		transition: transform 250ms ease-in-out;
+}
 
 .vMenu--active{
 	color: $primary;

@@ -129,14 +129,19 @@ document.addEventListener('DOMContentLoaded',function(){
 			if (lastScrollTop > 20){ addNewClass(document.getElementById('scrollToNext'),'invisible');} else {removeClass(document.getElementById('scrollToNext'),'invisible');}
 		}
 		var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		
+		// HIGHLIGHT HEADER
 		let descriptionHeaders = document.querySelectorAll('.description-header');
 		let menuItems = document.querySelectorAll('.nav-menu-item');
+
 		descriptionHeaders.forEach((el,i) => {
-			if(lastScrollTop > getOffset(el).top){
-				addNewClass(menuItems[i],'invisible');
-			}
-			else if(lastScrollTop < getOffset(el).top){
-				addNewClass(menuItems[i],'visible');
+			if(lastScrollTop + 100 >= getOffset(el).top){
+				if (!menuItems[i].classList.contains("highlightHeader")) {
+					menuItems.forEach(e=>{
+						e.classList.remove("highlightHeader")
+					})
+					addNewClass(menuItems[i],'highlightHeader');
+				}
 			}
 		});
 	});
