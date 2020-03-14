@@ -5,7 +5,8 @@ const gulp = require('gulp');
 const order = require('gulp-order');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
+// const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default
 
 gulp.task('theme_scripts', function(){
 	var glob = [];
