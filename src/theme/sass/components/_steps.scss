@@ -108,6 +108,7 @@
 .step__link{
 	color: $primary;
 	text-decoration: underline;
+	margin-bottom: 1.3em;
 	
 	&:hover {
 		color: darken($primary,20%);
