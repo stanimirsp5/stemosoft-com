@@ -1,33 +1,190 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 	<meta class="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Stemosoft | Air Sofia </title>
-	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
-	<%_ currentPage = "/pages" _%>
+	<title>
+		Stemosoft | Air Sofia</title>
+	<%_ currentPage = "/docs" _%>
 	<% include ../partials/metadata %>
+	<link rel="icon" src="./images/airSofia/icon-20.png">
+	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
 </head>
+
 <body>
-	<% include ../partials/nav %>
-	<div class="page__header">
-		<div class="hero__overlay hero__overlay--gradient"></div>
-		<div class="hero__mask"></div>
-		<div class="page__header__inner">
-			<div class="container">
-				<div class="page__header__content">
-					<div class="page__header__content__inner" id='navConverter'>
-						<h1 class="page__header__title">Air Sofia privacy policy</h1>
-					</div>
+	<!-- <% include ../partials/nav %> -->
+	<div class="page__header_o">
+		<div class="container">
+			<div class="page__header__content_o">
+				<div id="stemosoftHeader">
+					<a href='index.html' class="navbar__logo">stemosoft</a>
+				</div>
+				<div class="page__header__content__inner_o" id='navConverter'>
+					<h1 class="page__header__title_o">
+						<img id="small-image" src="./images/airSofia/icon-29@3x.png" class="expanded__image">
+						Air Sofia</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="page">
-		Notting to see here. Go Back!
-	</div>
-	<% include ../partials/footer %>
-<script src='<%= asset("js/app.min.js") %>'></script>
-<% include ../partials/analytics %>
+	<div id="navBarMenu" class="page">
+		<div class="side-nav-menu-wrap container">
+			<div class="side-nav-menu">
+				<ul class="vMenu">
+					<li class="nav-menu-item"><a href="#app-info">What is Air Sofia&trade;</a></li>
+					<li class="nav-menu-item"><a href="#details">Details</a></li>
+					<li class="nav-menu-item"><a href="#privacy-policy">Privacy policy</a></li>
+				</ul>
+			</div>
+			<div class="page__inner">
+				<!-- <div id="border_divider"></div> -->
+
+				<div class="page__main_o">
+					<div class="container">
+						<div class="text_container_o text_container_o--center">
+							<div class="step__media">
+							</div>
+							<h1 class="description-header" id="app-info">What is Air Sofia&trade;?</h1>
+							<div>
+								Air Sofia shows you readable and easy to personalize, real time air quality data for Sofia, Thessaloniki, Ohrid and Nicosia with no advertisements!
+							</div>
+							<h1 class="description-header" id="details">Details</h1>
+							<div>
+								Coming Soon!
+								<!-- <div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/liveText/screen1.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Let everyone see your message</h2>
+												<p class="expanded__text">At a concert, EDM party or any other fun place you can imagine.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/liveText/screen2.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Move your text with gestures</h2>
+												<p class="expanded__text">You can pinch, pan & rotate your text any way you want using our intuitive gesture control.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/liveText/screen3.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Unleash your creativity</h2>
+												<p class="expanded__text">Display customized messages by changing your background & text colors from a wide color palette.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/liveText/screen4.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Personalize your message</h2>
+												<p class="expanded__text">You can type any message you want in any language you want.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="expanded landing__section">
+									<div class="container">
+										<div class="expanded__inner">
+											<div class="expanded__media">
+												<img src="./images/liveText/screen5.jpg" class="expanded__image">
+											</div>
+											<div class="expanded__content">
+												<h2 class="expanded__title">Animate your text</h2>
+												<p class="expanded__text">Add flavor to your message by combining animations, so you can achieve different effects like a marquee sign, rotating text and others.</p>
+											</div>
+										</div>
+									</div>
+								</div> -->
+							</div>
+							<h1 class="description-header" id="privacy-policy">Privacy policy</h1>
+							<div>
+								<strong>Privacy Policy</strong>
+								<p>
+									Stemosoft built the Air Sofia app as
+									a Free app. This SERVICE is provided by
+									Stemosoft at no cost and is intended for use as
+									is.
+								</p>
+								<p>
+									The terms used in this Privacy Policy have the same meanings
+									as in our Terms and Conditions, which is accessible at
+									Air Sofia unless otherwise defined in this Privacy Policy.
+								</p>
+								<p>
+									Air Sofia <strong>does not</strong> collect or store any personal information for its users!
+								</p>
+								<div>
+									<p>
+										Link to privacy policy of third party service providers used
+										by the app
+									</p>
+									<ul>
+										<li><a href="https://airthings-project.com/privacy-policy/" target="_blank"
+												rel="noopener noreferrer">Air Things Projects</a></li>
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+									</ul>
+								</div>
+								<p><strong>Changes to This Privacy Policy</strong></p>
+								<p>
+									I may update our Privacy Policy from
+									time to time. Thus, you are advised to review this page
+									periodically for any changes. I will
+									notify you of any changes by posting the new Privacy Policy on
+									this page.
+								</p>
+								<p>This policy is effective as of 2020-07-04</p>
+								<p><strong>Contact Us</strong></p>
+								<p>
+									If you have any questions or suggestions about my
+									Privacy Policy, do not hesitate to contact me at stemosoft@gmail.com.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% include ../partials/footer %>
+		<script src='<%= asset("js/app.min.js") %>'></script>
+		<% include ../partials/analytics %>
 </body>
+
 </html>
