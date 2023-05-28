@@ -1,25 +1,25 @@
-name: NodeJS with Gulp
+name: Deploy to cPanel
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm install
-    - name: Build web app
-      run: npm run build
-    - name: Deploy to cPanel
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        local: dist
-        remote: /home/stemfcpg/public_html
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: 1022
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{ secrets.CPANEL_HOSTNAME }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to cPanel
+        run: |
+          rsync -r --delete-after --quiet ${{ github.workspace }}/ username@${{ secrets.CPANEL_HOSTNAME }}:~/public_html/
