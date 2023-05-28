@@ -8,19 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Build web app
+      run: npm run build
+    - name: Deploy to cPanel
+      uses: garygrossgarten/github-action-scp@release
       with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Build
-      run: |
-        npm install
-        gulp
+        local: dist
+        remote: /home/stemfcpg/public_html
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 1022
