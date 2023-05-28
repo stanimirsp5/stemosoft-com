@@ -17,7 +17,7 @@ jobs:
       uses: garygrossgarten/github-action-scp@release
       with:
         local: dist
-        remote: /home/stemfcpg/endorseme.stemosoft.com
+        remote: /home/stemfcpg/public_index
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
