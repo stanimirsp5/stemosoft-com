@@ -1,0 +1,24 @@
+name: UI pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Build web app
+      run: npm run build
+    - name: Deploy to cPanel
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: dist
+        remote: /home/stemfcpg/endorseme.stemosoft.com
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 1022
