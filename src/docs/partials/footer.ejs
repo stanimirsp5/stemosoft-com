@@ -1,8 +1,8 @@
 <div class="footer footer--dark">
 		<div class="container footer__inner">
 			<div class="footer__data">
-				<p class="footer__data__item">
-					&copy; 2020 stemosoft. All rights reserved.
+				<p class="footer__data__item" id="currentYear">
+					&copy; 2018 - 2020 stemosoft. All rights reserved.
 				</p>
 				<p class="footer__data__item">
 					<a href="mailto:stemosoft@gmail.com" target="_blank" class="footer__link">stemosoft@gmail.com</a> |
@@ -12,3 +12,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		var currentYear = new Date().getFullYear();
+		document.getElementById('currentYear').innerHTML = '&copy; 2018 - ' + currentYear + ' stemosoft. All rights reserved.';
+	</script>
