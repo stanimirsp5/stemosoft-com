@@ -83,9 +83,13 @@ gulp.task(
 );
 
 // Build => Production-ready theme folder to upload (Default build)
+// gulp.task(
+//   'build',
+//   gulp.series('theme_assets', gulp.parallel('theme_style', 'theme_scripts', 'theme_views'))
+// );
 gulp.task(
   'build',
-  gulp.series('theme_assets', gulp.parallel('theme_style', 'theme_scripts', 'theme_views'))
+  gulp.series('theme_assets', gulp.parallel('style_dev_theme', 'scripts_dev_theme', 'theme_views'))
 );
 
 // Build docs => Production-ready documents to upload (build_docs)
