@@ -12,7 +12,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build web app
-      run: npm run docs
+      run: npm run prod
     - name: Deploy to cPanel
       uses: garygrossgarten/github-action-scp@release
       with:
