@@ -6,7 +6,9 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "docs": "gulp build_docs"
+    "prod": "gulp prod",
+    "docs": "gulp build_docs",
+    "sync": "browser-sync"
   },
   "repository": {
     "type": "git",

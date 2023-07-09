@@ -7,13 +7,13 @@
 	<title>
 		Stemosoft | Stopanin</title>
 	<%_ currentPage = "/docs" _%>
-	<% include ../partials/metadata %>
+	<%- include('../partials/metadata') %>
 	<link rel="icon" src="./images/stopanin/icon.png">
 	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
 </head>
 
 <body>
-	<!-- <% include ../partials/nav %> -->
+	<!-- <%- include('../partials/nav') %> -->
 	<div class="page__header_o">
 		<div class="container">
 			<div class="page__header__content_o">
@@ -152,9 +152,9 @@
 				</div>
 			</div>
 		</div>
-		<% include ../partials/footer %>
+		<%- include('../partials/footer') %>
 		<script src='<%= asset("js/app.min.js") %>'></script>
-		<% include ../partials/analytics %>
+		<%- include('../partials/analytics') %>
 </body>
 
 </html>
