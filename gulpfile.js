@@ -46,12 +46,19 @@ gulp.task(
   gulp.parallel(
     'nodemon',
     function initServer(done) {
-      browserSync.init({
-        proxy: 'localhost:3000', // local node app address
-        port: 7000, // use *different* port than above
-        notify: false
-      });
-	  done();
+      browserSync.init(
+        {
+          proxy: 'localhost:3000', // local node app address
+          port: 7000, // use *different* port than above
+          notify: false
+        },
+        function onInit(err) {
+          if (err) {
+            console.error('[browser-sync] init failed:', err.message || err);
+          }
+          done();
+        }
+      );
     },
     function watcher(done) {
       // EJS and HTML Watcher
@@ -64,7 +71,7 @@ gulp.task(
       );
       // JS Watcher
       gulp.watch(['src/theme/js/**/*.js'], gulp.parallel('scripts_dev_theme'));
-      gulp.watch(['src/theme/js/**/*.js', 'src/docs/js/**/*.js'], gulp.parallel('scripts_dev_docs'));
+      gulp.watch(['src/theme/js/**/*.js', 'src/docs/partials/js/**/*.js'], gulp.parallel('scripts_dev_docs'));
 
 	  // Call the 'done' callback to signal completion
 	  done();

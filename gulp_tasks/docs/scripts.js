@@ -12,9 +12,9 @@ gulp.task('docs_scripts', function(){
 	// Push the theme JS first to concat everything
 	glob.push('src/theme/js/libraries/**/*.js');
 	glob.push('src/theme/js/app.js');
-	// Then the doc specific code
-	glob.push('src/docs/js/libraries/**/*.js');
-	glob.push('src/docs/js/app.js');
+	// Then the docs specific code
+	glob.push('src/docs/partials/js/libraries/**/*.js');
+	glob.push('src/docs/partials/js/app.js');
 	return gulp.src(glob)
 	.pipe(order(['*jquery.min.js*'])) // If jQuery is included, move to the top
 	.pipe(concat('app.min.js'))
