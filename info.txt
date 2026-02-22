@@ -1,2 +1,0 @@
-check ejs files for errors: npx ejslint **/*.ejs
-to generate static files run: npm run prod
