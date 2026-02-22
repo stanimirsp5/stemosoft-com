@@ -1,37 +1,59 @@
-html{
+html {
 	box-sizing: border-box;
 	background-color: $background;
+	height: 100%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
-.invisible{
-	opacity: 0;
-	transition: 0.7s;
+body {
+	margin: 0;
+	min-height: 100%;
+	background:
+		radial-gradient(circle at 10% 0%, rgba($primary, 0.12), transparent 44%),
+		radial-gradient(circle at 88% 16%, rgba($accent, 0.1), transparent 38%),
+		$background;
+	color: $text;
 }
 
-.fakefield{
-	display: none;
-}
-
-.left-align{
-	text-align: left;
-}
-
-.center, center-align{
-	text-align: center;
-}
-
-.right-align{
-	text-align: right;
-}
-
-.stress{
+::selection {
+	background: rgba($primary, 0.24);
 	color: $text-dark;
 }
 
-img, svg{
+.invisible {
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+
+.fakefield {
+	display: none;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.center,
+center-align {
+	text-align: center;
+}
+
+.right-align {
+	text-align: right;
+}
+
+.stress {
+	color: $text-dark;
+}
+
+img,
+svg {
 	max-width: 100%;
+	height: auto;
+	display: block;
 }

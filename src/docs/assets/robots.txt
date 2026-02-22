@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://stemosoft.com/sitemap.xml
+Host: stemosoft.com

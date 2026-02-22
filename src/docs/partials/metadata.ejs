@@ -1,20 +1,97 @@
-<%_ if (typeof(currentPage) === 'undefined'){ currentPage = "" } _%>
-<meta name="description" content="Mobile development studio based in Sofia that is striving to create useful apps that can be enjoyed by everyone!" />
-<meta name="robots" content="index, follow"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stemosoft apps" />
-<meta property="og:description" content="Mobile development studio based in Sofia that is striving to create useful apps that can be enjoyed by everyone!" />
-<meta property="og:image" content="./images/stemosoftlogo.png" />
+<%
+if (typeof(currentPage) === 'undefined'){ currentPage = ""; }
+
+const baseUrl = "https://stemosoft.com";
+const siteName = "stemosoft";
+const title = typeof(pageTitle) !== "undefined"
+	? pageTitle
+	: "stemosoft | Cross-platform apps and smart home products";
+const description = typeof(pageDescription) !== "undefined"
+	? pageDescription
+	: "stemosoft creates approachable cross-platform apps and modern smart home products that solve daily problems.";
+const keywords = typeof(pageKeywords) !== "undefined"
+	? pageKeywords
+	: "stemosoft, mobile apps, cross-platform apps, smart home, device hub, app development, Sofia";
+const path = typeof(pagePath) !== "undefined" ? pagePath : "/";
+const canonicalPath = path.startsWith("/") ? path : `/${path}`;
+const canonicalUrl = `${baseUrl}${canonicalPath}`;
+const imagePath = typeof(pageImage) !== "undefined" ? pageImage : "/images/stemosoft-social.svg";
+const imageUrl = /^https?:\/\//.test(imagePath) ? imagePath : `${baseUrl}${imagePath}`;
+const imageAlt = typeof(pageImageAlt) !== "undefined"
+	? pageImageAlt
+	: "stemosoft logo";
+const openGraphType = typeof(pageType) !== "undefined" ? pageType : "website";
+const robotsValue = typeof(pageRobots) !== "undefined"
+	? pageRobots
+	: "index, follow, max-image-preview:large";
+
+const defaultSchema = canonicalPath === "/"
+	? [
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "stemosoft",
+			"url": baseUrl,
+			"logo": `${baseUrl}/favicon.ico`,
+			"description": description,
+			"sameAs": [
+				"https://www.facebook.com/stemosoft/",
+				"https://play.google.com/store/search?q=stemosoft&c=apps"
+			]
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": siteName,
+			"url": baseUrl,
+			"inLanguage": "en"
+		}
+	]
+	: {
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": title,
+		"description": description,
+		"url": canonicalUrl,
+		"isPartOf": {
+			"@type": "WebSite",
+			"name": siteName,
+			"url": baseUrl
+		},
+		"inLanguage": "en"
+	};
+const schema = typeof(pageJsonLd) !== "undefined" ? pageJsonLd : defaultSchema;
+%>
+<meta name="description" content="<%= description %>" />
+<meta name="keywords" content="<%= keywords %>" />
+<meta name="author" content="stemosoft" />
+<meta name="robots" content="<%= robotsValue %>" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="canonical" href="<%= canonicalUrl %>" />
+<link rel="alternate" hreflang="en" href="<%= canonicalUrl %>" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+<meta property="og:type" content="<%= openGraphType %>" />
+<meta property="og:site_name" content="<%= siteName %>" />
+<meta property="og:title" content="<%= title %>" />
+<meta property="og:description" content="<%= description %>" />
+<meta property="og:url" content="<%= canonicalUrl %>" />
+<meta property="og:image" content="<%= imageUrl %>" />
+<meta property="og:image:alt" content="<%= imageAlt %>" />
 <meta property="og:locale" content="en_US" />
+
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Stemosoft app" />
-<meta name="twitter:description" content="Mobile development studio based in Sofia that is striving to create useful apps that can be enjoyed by everyone!" />
-<meta name="twitter:image" content="./images/stemosoftlogo.png" />
-<link rel="shortcut icon" src="./images/greenTicket/icon-20.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="twitter:title" content="<%= title %>" />
+<meta name="twitter:description" content="<%= description %>" />
+<meta name="twitter:image" content="<%= imageUrl %>" />
+<meta name="twitter:image:alt" content="<%= imageAlt %>" />
+
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0a7cff">
+<meta name="msapplication-TileColor" content="#0a7cff">
+
+<script type="application/ld+json"><%- JSON.stringify(schema) %></script>

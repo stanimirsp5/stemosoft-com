@@ -1,4 +1,4 @@
-html{
+html {
 	font-family: $font;
 	font-size: $font-size;
 	color: $text;
@@ -7,78 +7,89 @@ html{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
-	-moz-font-feature-settings: "liga" on;
 }
 
-p{
-	margin-bottom: 1.3em;
+body {
+	font-family: $font;
 }
 
-h1, h2, h3, h4 {
-	margin: 1.414em 0 0.5em;
-	line-height: 1.35;
+p {
+	margin: 0 0 1.2em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 1.2em 0 0.45em;
+	line-height: 1.2;
 	color: $text-dark;
-	font-weight: $normal;
+	font-family: $font-display;
+	font-weight: 600;
+	letter-spacing: -0.02em;
 }
 
-h5,h6 {
-	margin: 1.414em 0 0.5em;
-	line-height: 1.4;
+h5,
+h6 {
+	margin: 1.1em 0 0.45em;
+	line-height: 1.35;
 	color: $text;
-	font-weight: $normal;
+	font-weight: 600;
 }
 
 h1 {
 	margin-top: 0;
-	font-size: 2.074em;
+	font-size: clamp(2rem, 2.2vw + 1.2rem, 3.35rem);
 }
 
-h2{
-	font-size: 1.728em;
+h2 {
+	font-size: clamp(1.55rem, 1.15vw + 1.05rem, 2.25rem);
 }
 
 h3 {
-	font-size: 1.44em;
+	font-size: clamp(1.3rem, 0.8vw + 1rem, 1.7rem);
 }
 
 h4 {
-	font-size: 1.2em;
+	font-size: 1.15rem;
 }
 
-small,h6 {
-	font-size: 0.833em;
-  margin: 0.25em 0;
+small,
+h6 {
+	font-size: 0.85rem;
+	margin: 0.2em 0;
 }
 
-pre{
-  font-family: monospace, monospace;
-  font-size: 0.85rem;
-  color: $text-dark;
-  width: min-content;
-  background: $background-alt;
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-  padding: 8pt 16pt;
-  width: 100%;
-  //max-width: 85%; // Remove later
-  overflow: auto;
-  border: 1px solid $line;
+pre {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.85rem;
+	color: $text-dark;
+	width: 100%;
+	background: rgba($background-alt, 0.86);
+	word-break: break-word;
+	white-space: pre-wrap;
+	padding: 10pt 14pt;
+	overflow: auto;
+	border: 1px solid rgba($line, 0.8);
+	border-radius: 12px;
 }
 
-a{
-  outline: 0;
-  text-decoration: none;
-  color: inherit;
+a {
+	outline: 0;
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.2s ease;
 }
 
-.link{
-   color: $primary;
-  text-decoration: underline;
+.link {
+	color: $primary;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
 
-  @include desktop{
-      &:hover{
-        color: $primary-dark;
-      }
-  }
+	@include desktop {
+		&:hover {
+			color: $primary-dark;
+		}
+	}
 }

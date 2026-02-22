@@ -1,100 +1,82 @@
 /* Vertical menu */
-.vMenu{
+.vMenu {
 	padding: 0;
+	margin: 0;
 	list-style-type: none;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.6rem;
 	max-width: 100%;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	border-bottom: 1px solid $line;
 
-	@include desktop{
-		display: inline-block;
-		border-bottom: none;
-	}
-
-	li{
-		display: inline-block;
-		margin-bottom: 1em;
-		width: 48%;
-		padding-left: 16pt;
-
-		@include desktop{
-			padding-left: 0;
-			display: block;
-			width: auto;
-		}
-	}
-
-	a{
+	@include desktop {
 		display: block;
+		background: rgba(255, 255, 255, 0.88);
+		border: 1px solid rgba($line, 0.85);
+		border-radius: 16px;
+		padding: 0.7rem;
+		box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+	}
 
-		@include desktop{
-			display: inline-block;
-			opacity: 0.85;
+	li {
+		display: block;
+		margin-bottom: 0;
+		width: 100%;
+		padding-left: 0;
+	}
 
-			&:hover{
-				opacity: 1;
+	a {
+		display: block;
+		padding: 0.58rem 0.72rem;
+		border-radius: 12px;
+		font-weight: 700;
+		color: $text;
+		border: 1px solid rgba($line, 0.85);
+		background: rgba(255, 255, 255, 0.65);
+		transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+
+		@include desktop {
+			border-color: transparent;
+			background: transparent;
+
+			&:hover {
 				color: $primary;
+				border-color: rgba($primary, 0.18);
+				background: rgba($primary, 0.08);
+				transform: translateX(1px);
 			}
-
-			&:after {
-				display: block;
-				content: '';
-				border-bottom: 1px solid $primary;  
-				transform: scaleX(0);  
-				transition: transform 250ms ease-in-out;
-			}
-
-			&:hover:after { transform: scaleX(1); }
 		}
 	}
 
-	& > ul{
-		margin-top: -0.65em;
-		padding-left: 1.5em;
-		margin-bottom: 0.75em;
+	& > ul {
+		margin-top: 0;
+		padding-left: 1.1em;
+		margin-bottom: 0.45em;
 	}
 
-	& > ul li{
-		opacity: 0.85;
-		font-size: 0.95em;
-		margin-bottom: 0.25em;
+	& > ul li {
+		opacity: 0.9;
+		font-size: 0.92em;
+		margin-bottom: 0.3em;
 
-		&:before{
+		&:before {
 			content: "-";
 			margin-right: 0.5em;
 		}
 	}
 }
-.highlightHeader{
-		color: $primary;
 
-		display: block;
-		content: '';
-		border-bottom: 1px solid $primary;  
-		display: inline-block !important;
-		transition: transform 250ms ease-in-out;
+.highlightHeader > a {
+	color: $primary;
+	background: rgba($primary, 0.1);
+	border-color: rgba($primary, 0.28);
 }
 
-.vMenu--active{
+.vMenu--active {
 	color: $primary;
-	
-	&:before{
-		content: "\2014";
-		margin-right: 0.333em;
-	}
+	background: rgba($primary, 0.1);
+	border-color: rgba($primary, 0.3);
 
-	@include desktop{
-		opacity: 1;
+	@include desktop {
 		color: $primary;
-
-		&:after {
-			display: block;
-			content: '';
-			border-bottom: 1px solid $primary;  
-			transform: none;  
-			transition: none;
-		}
 	}
 }

@@ -1,33 +1,44 @@
-.cta{
-	background: linear-gradient(to right, $primary, $secondary);
+.cta {
+	background: linear-gradient(120deg, rgba($primary, 0.94), rgba($primary-dark, 0.92));
 	color: #fff;
-	padding: 48pt 0;
+	padding: 4rem 0;
 	text-align: center;
+	position: relative;
+	overflow: hidden;
 }
 
-.cta--reverse{
-	background: linear-gradient(to left, $primary, $secondary);
+.cta::before {
+	content: "";
+	position: absolute;
+	inset: -20% auto auto -10%;
+	width: 280px;
+	height: 280px;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 70%);
 }
 
-.cta--plain{
+.cta--reverse {
+	background: linear-gradient(120deg, rgba($primary-dark, 0.94), rgba($primary, 0.9));
+}
+
+.cta--plain {
 	background: $primary;
 }
 
-.cta--secondary{
+.cta--secondary {
 	background: $secondary;
+	color: $text-dark;
 }
 
-.cta__title{
+.cta__title {
 	color: inherit;
 }
 
-.cta__sub{
-	opacity: 0.85;
+.cta__sub {
+	opacity: 0.9;
 	max-width: 58ch;
-	margin: 16pt auto 24pt auto;
-	
+	margin: 0.9rem auto 1.55rem auto;
 
-	&--center{
+	&--center {
 		text-align: center;
 	}
 }
