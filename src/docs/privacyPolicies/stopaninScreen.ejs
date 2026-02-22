@@ -2,23 +2,44 @@
 <html lang='en'>
 
 <head>
-	<meta class="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>
-		Stemosoft | Stopanin</title>
-	<%_ currentPage = "/docs" _%>
+	<%_
+		currentPage = "/docs";
+		pagePath = "/stopaninScreen";
+		pageTitle = "Stopanin Privacy Policy and App Details | stemosoft";
+		pageDescription = "Read Stopanin app details and privacy policy by stemosoft. Stopanin connects home owners and housekeepers in Bulgaria.";
+		pageKeywords = "Stopanin, housekeeping app, privacy policy, stemosoft";
+		pageImage = "/images/stopanin/screen1.jpg";
+		pageImageAlt = "Stopanin app screenshot";
+		pageType = "article";
+		pageJsonLd = {
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Stopanin",
+			"applicationCategory": "UtilitiesApplication",
+			"operatingSystem": "iOS, Android",
+			"url": "https://stemosoft.com/stopaninScreen",
+			"publisher": {
+				"@type": "Organization",
+				"name": "stemosoft",
+				"url": "https://stemosoft.com"
+			},
+			"description": pageDescription
+		};
+	_%>
+	<title><%= pageTitle %></title>
 	<%- include('../partials/metadata') %>
-	<link rel="icon" src="./images/stopanin/icon.png">
 	<link rel='stylesheet' href='<%= asset("css/style.min.css") %>' />
 </head>
 
-<body>
+<body class="docs-policy">
 	<!-- <%- include('../partials/nav') %> -->
 	<div class="page__header_o">
 		<div class="container">
 			<div class="page__header__content_o">
 				<div id="stemosoftHeader">
-					<a href='index.html' class="navbar__logo">stemosoft</a>
+					<a href='/' class="navbar__logo">stemosoft</a>
 				</div>
 				<div class="page__header__content__inner_o" id='navConverter'>
 					<h1 class="page__header__title_o">

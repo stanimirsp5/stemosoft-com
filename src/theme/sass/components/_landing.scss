@@ -1,16 +1,16 @@
-.landing__section{
-	padding: 24pt 0;
+.landing__section {
+	padding: 3.7rem 0;
 }
 
 .landing__section--offsettop {
-	margin: -10vh 0 0 0;
+	margin: -8vh 0 0 0;
 	padding: 0;
 	position: relative;
 	z-index: 100;
 }
 
-.landing__section:nth-child(odd){
-	background-color: $secondary;//$background-alt;
-	border-top: 1px solid $line;
-	border-bottom: 1px solid $line;
+.landing__section:nth-child(odd) {
+	background-color: transparent;
+	border-top: none;
+	border-bottom: none;
 }

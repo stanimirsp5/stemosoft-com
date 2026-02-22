@@ -1,97 +1,117 @@
-.navbar{
+.navbar {
 	position: fixed;
 	z-index: 100;
 	width: 100%;
-	background-color: $primary;
-	transition: 0.7s;
+	background-color: rgba(246, 248, 252, 0.86);
+	backdrop-filter: saturate(190%) blur(14px);
+	border-bottom: 1px solid rgba($line, 0.8);
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
 
-	&--nofixed{
+	&--nofixed {
 		position: relative;
 		z-index: 3;
 	}
 }
 
-.navbar__inner{
+.navbar__inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: $navbar-height;
-	color: #fff;
-	transition: 0.7s;
+	color: $text-dark;
+	gap: 0.9rem;
 }
 
 // Content
-.navbar__logo{
-	font-size: 1.325rem;
-	transition: 0;
-	color: $text;
+.navbar__logo {
+	font-size: 1.075rem;
+	font-family: $font-display;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: $text-dark;
 	text-decoration: none;
+	white-space: nowrap;
 }
 
-.navbar__menu{
+.navbar__menu {
 	display: none;
 
-	&--noMob{
+	&--noMob {
 		display: block;
 	}
 
-	@include desktop{
+	@include desktop {
 		display: block;
 	}
 
-	li{
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
 		margin-left: 4pt;
-		backface-visibility: hidden;
-    	display: inline-block;
+		list-style: none;
+		display: inline-block;
 
-		@include desktop{
+		@include desktop {
 			margin-left: 16pt;
 		}
 	}
 
-	a{
+	a {
 		color: $text;
-		// text-transform: uppercase;
-		font-weight: bold;
-		@include desktop{
-			opacity: 0.75;
+		font-weight: 700;
+		position: relative;
 
-			&:hover{
+		@include desktop {
+			opacity: 0.82;
+
+			&:hover {
 				opacity: 1;
+				color: $text-dark;
 			}
 
 			&:after {
-				display:block;
+				display: block;
 				content: '';
-				border-bottom: solid 1px #fff;  
-				transform: scaleX(0);  
-				transition: transform 250ms ease-in-out;
+				border-bottom: solid 2px $primary;
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 180ms ease-in-out;
+				margin-top: 0.2rem;
 			}
 
-			&:hover:after { transform: scaleX(1); }	
+			&:hover:after {
+				transform: scaleX(1);
+			}
 		}
 	}
 }
 
-.navbar__menu-mob{
+.navbar__menu-mob {
 	display: block;
 
-	&--noMob{
+	&--noMob {
 		display: none;
 	}
 
-	@include desktop{
+	@include desktop {
 		display: none;
 	}
 }
 
 /*--- Extended and transparent version ---*/
-.navbar--extended{
+.navbar--extended {
 	background-color: transparent;
-	
-	.navbar__inner{
+	backdrop-filter: none;
+	border-color: transparent;
+	box-shadow: none;
+
+	.navbar__inner {
 		height: $navbar-height;
-		color: $hero-color; // Since this is transparent whatever color is used in the hero, fits here
+		color: $hero-color;
 	}
 }
 
@@ -99,64 +119,72 @@
 
 .nav__mobile ul {
 	margin: 0;
-	padding: 0;
+	padding: 1.2rem 0;
 	width: 100%;
 	display: block;
 	list-style: none;
-	background-color: $background-dark;
+	background: rgba($background-dark, 0.95);
+	backdrop-filter: blur(10px);
 	color: #fff;
 }
 
 .nav__mobile li {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em 0;
-  display: block;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+	width: 82%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.85em 0;
+	display: block;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 
-  &:last-child{
-  	border-bottom: none;
-  }
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.nav__mobile a {
+	font-weight: 700;
 }
 
 .js .nav__mobile {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
+	clip: rect(0 0 0 0);
+	max-height: 0;
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	zoom: 1;
 }
 
 .nav__mobile.opened {
-  max-height: 9999px;
+	max-height: 9999px;
 }
 
 .nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
-@include desktop{
-  .js .nav__mobile {
-    position: relative;
-  }
-  .js .nav__mobile.closed {
-    max-height: none;
-  }
-  .nav-toggle {
-    display: none;
-  }
+@include desktop {
+	.js .nav__mobile {
+		position: relative;
+	}
+
+	.js .nav__mobile.closed {
+		max-height: none;
+	}
+
+	.nav-toggle {
+		display: none;
+	}
 }
 
-#toggle svg{
+#toggle svg {
 	height: 1.2em;
 	width: 1.2em;
 	vertical-align: middle;
+	color: $text-dark;
 }

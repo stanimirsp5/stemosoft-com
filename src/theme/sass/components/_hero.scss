@@ -1,197 +1,205 @@
-.hero{
+.hero {
 	position: relative;
 	width: 100%;
-	// background-image: url("../images/hero-background.jpg");
-	// box-shadow: $hero-shadow;
-	background-size: cover; 
+	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: $hero-color;
-	// margin-bottom: 5em;
+	overflow: hidden;
 
-	&__inner{
+	&__inner {
 		position: relative;
 		z-index: 3;
 	}
 }
 
-// Hero overlays
-// It contains two divs between the image and the content
-// The one is the SVG mask and the second one a colored overlay with high opacity
-
-// Color overlay
-.hero__overlay{
+.hero__overlay {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	opacity: $hero-color-opacity;
 	z-index: 1;
-	background-color: $primary;
+	background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(239, 245, 255, 0.96));
 }
-.hero__overlay--curved{
+
+.hero__overlay--curved {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	opacity: $hero-color-opacity;
 	z-index: 1;
-	background-color: $primary;
+	background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(239, 245, 255, 0.96));
 
 	&::after {
 		content: "";
 		position: absolute;
-		bottom: 0;
+		bottom: -20%;
 		left: 0;
-		height: 50%;
+		height: 42%;
 		width: 100%;
-		transform: SkewY(-6deg);
+		transform: skewY(-4deg);
 		transform-origin: bottom right;
-		background: inherit;	
+		background: inherit;
 	}
 }
 
-.hero__overlay--background{
-	// background-color: $secondary;
-	background-color: #eeeeee;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3CradialGradient id='a' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='%23f8f8f9'/%3E%3Cstop offset='1' stop-color='%23eeeeee'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='750' x2='1550' y2='750'%3E%3Cstop offset='0' stop-color='%23f3f3f4'/%3E%3Cstop offset='1' stop-color='%23eeeeee'/%3E%3C/linearGradient%3E%3Cpath id='s' fill='url(%23b)' d='M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z'/%3E%3Cg id='g'%3E%3Cuse href='%23s' transform='scale(0.12) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.2) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.25) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(0.3) rotate(-20)'/%3E%3Cuse href='%23s' transform='scale(0.4) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(0.5) rotate(20)'/%3E%3Cuse href='%23s' transform='scale(0.6) rotate(60)'/%3E%3Cuse href='%23s' transform='scale(0.7) rotate(10)'/%3E%3Cuse href='%23s' transform='scale(0.835) rotate(-40)'/%3E%3Cuse href='%23s' transform='scale(0.9) rotate(40)'/%3E%3Cuse href='%23s' transform='scale(1.05) rotate(25)'/%3E%3Cuse href='%23s' transform='scale(1.2) rotate(8)'/%3E%3Cuse href='%23s' transform='scale(1.333) rotate(-60)'/%3E%3Cuse href='%23s' transform='scale(1.45) rotate(-30)'/%3E%3Cuse href='%23s' transform='scale(1.6) rotate(10)'/%3E%3C/g%3E%3C/defs%3E%3Cg transform='rotate(0 0 0)'%3E%3Cg transform='rotate(0 0 0)'%3E%3Ccircle fill='url(%23a)' r='3000'/%3E%3Cg opacity='0.5'%3E%3Ccircle fill='url(%23a)' r='2000'/%3E%3Ccircle fill='url(%23a)' r='1800'/%3E%3Ccircle fill='url(%23a)' r='1700'/%3E%3Ccircle fill='url(%23a)' r='1651'/%3E%3Ccircle fill='url(%23a)' r='1450'/%3E%3Ccircle fill='url(%23a)' r='1250'/%3E%3Ccircle fill='url(%23a)' r='1175'/%3E%3Ccircle fill='url(%23a)' r='900'/%3E%3Ccircle fill='url(%23a)' r='750'/%3E%3Ccircle fill='url(%23a)' r='500'/%3E%3Ccircle fill='url(%23a)' r='380'/%3E%3Ccircle fill='url(%23a)' r='250'/%3E%3C/g%3E%3Cg transform='rotate(0 0 0)'%3E%3Cuse href='%23g' transform='rotate(10)'/%3E%3Cuse href='%23g' transform='rotate(120)'/%3E%3Cuse href='%23g' transform='rotate(240)'/%3E%3C/g%3E%3Ccircle fill-opacity='0.1' fill='url(%23a)' r='3000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-	// background-attachment: fixed;
-	background-size: cover;
+.hero__overlay--background {
+	background:
+		radial-gradient(circle at 8% 8%, rgba($primary, 0.2), transparent 32%),
+		radial-gradient(circle at 86% 18%, rgba($accent, 0.18), transparent 30%),
+		linear-gradient(150deg, #fdfefe 0%, #eff5ff 58%, #e8f3ff 100%);
 }
 
-.hero__overlay--gradient{
-	background: linear-gradient(to right, $primary, $secondary);
+.hero__overlay--gradient {
+	background: linear-gradient(to right, rgba($primary, 0.18), rgba($secondary, 0.94));
 }
 
-.hero__overlay--gradientVertical{
-	background: linear-gradient(to bottom, $primary, $secondary);
+.hero__overlay--gradientVertical {
+	background: linear-gradient(to bottom, rgba($primary, 0.18), rgba($secondary, 0.94));
 }
 
-// Mask
-.hero__mask{
+.hero__mask {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><linearGradient id="06714b97-aec8-4b7e-bf3d-1e20f95f612e" y1="809.5" x2="958" y2="809.5" gradientTransform="matrix(1, 0, 0, -1, 0, 1082)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.05"/></linearGradient></defs><title>hero</title><rect id="0567095b-2cf7-4407-b8ab-ec2abe52d830" data-name="&lt;Path&gt;" y="545" width="1920" height="535" fill="#fff" opacity="0.05" style="isolation:isolate"/><polygon id="82ca9a61-a0a1-49cc-9805-a3533c693bad" data-name="&lt;Path&gt;" points="958 545 0 545 0 0 770.96 0 958 545" fill="url(#06714b97-aec8-4b7e-bf3d-1e20f95f612e)"/></svg>');
-	background-size: cover; 
-	background-position: center center;
-	background-repeat: no-repeat;
-	opacity: $hero-mask-opacity;
 	z-index: 2;
+	opacity: $hero-mask-opacity;
+	background:
+		radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.88), transparent 34%),
+		radial-gradient(circle at 77% 80%, rgba($primary, 0.12), transparent 31%);
 }
 
-// Actual content
-.hero__content{
+.hero__content {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: stretch;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 	min-height: 100vh;
-	padding: 1em;
-	overflow: auto;
+	padding: calc(#{$navbar-height} + 1rem) 0 4.5rem;
+	gap: 1.5rem;
+	overflow: visible;
 	text-align: left;
 
 	@include tablet {
-		min-height: 60vh;
-
+		min-height: 72vh;
+		padding-bottom: 4rem;
 	}
 
 	@include desktop {
 		flex-wrap: nowrap;
 		justify-content: space-between;
+		gap: 2.5rem;
 	}
 }
 
+.hero__content__inner {
+	max-width: 620px;
+	width: 100%;
+}
+
 /*--- CONTENT STYLING ---*/
-.hero__title{
+.hero__title {
 	color: inherit;
-	font-family: $font;
-	font-size: 40px;
-	font-weight: bold;
-	margin-bottom: 16px;
+	font-family: $font-display;
+	font-size: clamp(2.2rem, 4vw, 4rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	margin-bottom: 0.3em;
 }
 
-.hero__subtitle{
+.hero__subtitle {
 	color: $primary;
-	font-size: 21px;
-	font-weight: 500;
-	margin-bottom: 16px;
+	font-size: clamp(1.05rem, 1vw + 0.75rem, 1.4rem);
+	font-weight: 700;
+	margin-bottom: 0.8rem;
+	letter-spacing: 0.015em;
 }
 
-.hero__text{
-	opacity: 0.85;
-	line-height: 1.7;
+.hero__text {
+	opacity: 0.92;
+	line-height: 1.75;
 	text-align: left;
-	font-size: 1.1em;
+	font-size: 1.05rem;
 	margin: 0;
+	max-width: 62ch;
 }
 
 .hero__graphic {
 	text-align: center;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		background: rgba(255, 255, 255, 0.7);
+		border: 1px solid rgba($line, 0.85);
+		border-radius: 32px;
+		padding: clamp(1rem, 2vw, 1.6rem);
+		box-shadow: 0 20px 42px rgba(15, 23, 42, 0.12);
+	}
+
 	@include tablet {
-		width: 50%;
-		height: 50%;
+		width: 52%;
 	}
 
 	@include desktop {
-		width: 35%;	
-		height: 35%;
+		width: 38%;
 	}
 }
 
-.hero .button{
-	margin: 64px 0 32px 0;
+.hero .button {
+	margin: 2.2rem 0 0;
 }
 
 .hero__button {
 	background-color: $primary;
 	color: #ffffff;
-	font-weight: bold;
-	font-size: 16px;
-	padding: 10px;
-	width: 100%;
+	font-size: 0.95rem;
+	padding: 0.75rem 1.35rem;
+	max-width: 220px;
 
-	&:hover{
-		background-color: darken($primary,15%);
+	&:hover {
+		background-color: darken($primary, 9%);
 	}
 }
 
 // Sub-hero
-.hero__sub{
+.hero__sub {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
+	height: 46px;
 }
 
-.hero__sub__down{
+.hero__sub__down {
 	width: $hero-down-size;
 	height: $hero-down-size;
-	color: $text;
-	transition: 0.7s;
+	color: rgba($text, 0.7);
+	transition: color 0.25s ease;
 	cursor: pointer;
 
-	@include desktop{
-		&:hover{
+	@include desktop {
+		&:hover {
 			color: $primary;
 		}
 	}
 }
 
-#scrollToNext{
-	transition: 0.7s;
+#scrollToNext {
+	transition: opacity 0.35s ease;
 }
-
 
 /*--- MODIFICATIONS ---*/
 
 // With the class "hero-full" the white line between the hero gets hidden and the hero expands
-.hero--full{
-	.hero__content{
+.hero--full {
+	.hero__content {
 		min-height: 100vh;
 	}
 }
 
-.hero--full + .hero__sub{
+.hero--full + .hero__sub {
 	display: none;
 }

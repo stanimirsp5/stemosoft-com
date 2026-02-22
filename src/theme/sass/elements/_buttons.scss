@@ -1,39 +1,47 @@
-button, .button{
-	display: inline-block;
-	padding: 6pt 20pt;
-	line-height: $line-height;
-	border: 1px solid $primary;
+button,
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.45rem;
+	padding: 9pt 18pt;
+	line-height: 1.2;
+	border: 1px solid rgba($primary, 0.35);
 	color: $primary;
-	font-weight: $normal;
-	transition: 0.7s;
-	white-space: nowrap;
+	font-family: $font;
+	font-weight: 700;
+	letter-spacing: 0.01em;
 	cursor: pointer;
-	background-color: transparent;
-	border-radius: $radius;
-	margin-bottom: 1.3em;
-	transition: 0.7s;
+	background-color: rgba($background-alt, 0.72);
+	border-radius: 14px;
+	margin-bottom: 1.1em;
 	text-align: center;
 	text-decoration: none;
+	box-shadow: 0 8px 18px rgba($primary, 0.12);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus {
 		outline: 0;
 	}
 
-	@include desktop{
-		&:hover{
-			border-color: $primary-dark;
+	@include desktop {
+		&:hover {
+			transform: translateY(-1px);
+			border-color: rgba($primary, 0.6);
 			color: $primary-dark;
+			box-shadow: 0 12px 24px rgba($primary, 0.2);
 		}
 	}
 }
 
-.button__primary{
+.button__primary {
 	background-color: $primary;
 	border-color: $primary;
 	color: #fff;
 
-	@include desktop{
-		&:hover{
+	@include desktop {
+		&:hover {
 			background-color: $primary-dark;
 			border-color: $primary-dark;
 			color: #fff;
@@ -41,45 +49,46 @@ button, .button{
 	}
 }
 
-.button__accent{
+.button__accent {
 	background-color: $accent;
 	border-color: $accent;
 	color: #fff;
 
-	@include desktop{
-		&:hover{
-			background-color: darken($accent,4%);
-			border-color: darken($accent,4%);
+	@include desktop {
+		&:hover {
+			background-color: darken($accent, 4%);
+			border-color: darken($accent, 4%);
 			color: #fff;
 		}
 	}
 }
 
-.button__delete{
+.button__delete {
 	background-color: $error;
 	border-color: $error;
 	color: #fff;
 
-	@include desktop{
-		&:hover{
-			background-color: darken($error,4%);
-			border-color: darken($error,4%);
+	@include desktop {
+		&:hover {
+			background-color: darken($error, 4%);
+			border-color: darken($error, 4%);
 			color: #fff;
 		}
 	}
 }
 
-.button:disabled{
-	opacity: 0.25;
+.button:disabled {
+	opacity: 0.4;
 	cursor: default;
-	pointer-events:none;
+	pointer-events: none;
+	box-shadow: none;
 }
 
 // Utility classes
-.button--fixed{
+.button--fixed {
 	width: 160px;
 }
 
-.button--fixed2{
+.button--fixed2 {
 	width: 220px;
 }
