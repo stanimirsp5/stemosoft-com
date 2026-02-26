@@ -23,6 +23,27 @@ if (!global.docsMode){
 	app.use(express.static(path.join(__dirname, 'src/docs/public')));
 	app.use(express.static(path.join(__dirname, 'src/docs/assets')));
 	app.use(morgan('tiny'));
+
+	// Canonical URL normalization to reduce duplicate indexing signals.
+	app.use((req, res, next) => {
+		const hasQuery = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+
+		if (req.path === '/.html' || req.path === '/index.html') {
+			return res.redirect(301, `/${hasQuery}`);
+		}
+
+		if (req.path.length > 1 && req.path.endsWith('/')) {
+			const normalizedPath = req.path.replace(/\/+$/, '');
+			return res.redirect(301, `${normalizedPath}${hasQuery}`);
+		}
+
+		if (/^\/.+\.html$/.test(req.path)) {
+			const normalizedPath = req.path.replace(/\.html$/, '');
+			return res.redirect(301, `${normalizedPath}${hasQuery}`);
+		}
+
+		return next();
+	});
 	app.use(docsRouter);
 }
 

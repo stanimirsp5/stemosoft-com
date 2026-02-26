@@ -10,6 +10,7 @@ const rename = require('gulp-rename');
 gulp.task('docs_views',function(){
 	return gulp.src(['src/docs/*.ejs', 'src/docs/privacyPolicies/*.ejs'])
 	.pipe((replace(/href\s*=\s*(['"])\/(.*?)(['"])/g,'href="./$2.html"')))
+	.pipe(replace("./.html", "./index.html"))
 	.pipe(ejs({ site_analytics: process.env.ANALYTICS || "",asset: function(assetLoc){ return assetLoc; }, convertType: ".html"}, {}, { ext: '.html' }).on('error', log))
 	.pipe(rename({ extname: '.html' }))
 	.pipe(gulp.dest('./docs'))
