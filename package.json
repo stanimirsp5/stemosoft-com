@@ -32,7 +32,7 @@
   "homepage": "https://github.com/anges244/evie#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "express": "^4.22.1",
     "gulp-concat": "^2.6.1",
     "gulp-ejs": "^5.1.0",
     "gulp-nodemon": "^2.5.0",
